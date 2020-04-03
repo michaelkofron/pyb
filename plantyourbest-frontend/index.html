@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="home_style.css">
+        <link rel="stylesheet" type="text/css" href="search_animation.css">
+    </head>
+    <body>
+        <div id="top">
+            <div id="pad-top">
+            
+            </div>
+            <div id="logo">
+                <img src="logo.png">
+            </div>
+            <div id="biotext">
+                <h1 id="bio">Advanced soil and weather information, 250,000+ plants across 50 states</h1>
+            </div>
+            <div id="search-text">
+                <h1 id="search-text-inner">Search by Plant or State</h1>
+            </div>
+            <div id="buttons">
+                <div id="search-plant"><p>plant</p></div>
+                <div id="search-state"><p>state</p></div>
+                <div id="searchbar" style="display: none;">
+                    <div id="exit"></div>
+                    <input type="text">
+                    <div id="searchbutton"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </body>
+    <footer>
+        <script src="p5.min.js"></script>
+        <script src="vanta.trunk.min.js"></script>
+        <script>
+        VANTA.TRUNK({
+        el: "#top",
+        mouseControls: true,
+        touchControls: true,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0xb7f5be,
+        backgroundColor: 0xffffff,
+        spacing: 7.00,
+        chaos: 2.50
+        })
+        </script>
+        <script src="home_listeners.js"></script>
+    </footer>
+</html>
