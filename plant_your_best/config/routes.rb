@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   get "/api/plants", to: "plants#info"
   get "/api/plants/:query(/:searchtype)", to: "plants#all"
-  #get "/api/states", to: "states#all"
+  #get "/api/states", to: "states#info"
 
 end
