@@ -10,21 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_01_002028) do
-
-  create_table "plants", force: :cascade do |t|
-    t.string "com_name"
-    t.string "sci_name"
-    t.string "fam_name"
-  end
-
-  create_table "plants_states", id: false, force: :cascade do |t|
-    t.integer "state_id", null: false
-    t.integer "plant_id", null: false
-  end
-
-  create_table "states", force: :cascade do |t|
-    t.string "name"
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end

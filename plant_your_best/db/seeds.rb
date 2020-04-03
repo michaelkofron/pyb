@@ -36,8 +36,9 @@ state_array.each do |state|
         new_plant = Plant.create(com_name: common_name, sci_name: scientific_name, fam_name: family_name)
 
         new_state.plants << new_plant
+        new_plant.states << new_state
 
-        puts new_plant.com_name + " " + state
+        puts counter
 
         counter += 1
 
