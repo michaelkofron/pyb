@@ -8,8 +8,9 @@ function searchPlantListener(){
         state.style.display = "none"
         search.style.display = "flex"
         input.setAttribute("id", "plant-searchbar")
-        input.setAttribute("placeholder", "#name, sci name, family name")
+        input.setAttribute("placeholder", "#common-name loose search")
         input.focus()
+        searchButtonClick()
     })
 
     state.addEventListener("click", function(){
@@ -35,6 +36,18 @@ function exitSearchBar(){
         state.style.display = "flex"
         input.removeAttribute("id")
         input.removeAttribute("placeholder")
+    })
+}
+
+function searchButtonClick(){
+    searchButton = document.getElementById("searchbutton")
+    plantSearch = document.getElementById("plant-searchbar")
+    stateSearch = document.getElementById("state-searchbar")
+
+    searchButton.addEventListener("click", function(){
+        if (plantSearch) {
+            window.location.href = `http://localhost:3000/api/plants/com_name=${plantSearch.value}`
+        }
     })
 }
 
