@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_01_002028) do
+ActiveRecord::Schema.define(version: 2020_04_04_174935) do
 
   create_table "plants", force: :cascade do |t|
     t.string "com_name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_04_01_002028) do
 
   create_table "states", force: :cascade do |t|
     t.string "name"
+    t.integer "plant_number"
   end
 
 end
