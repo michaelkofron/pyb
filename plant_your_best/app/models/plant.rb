@@ -1,6 +1,8 @@
 class Plant < ApplicationRecord
     has_and_belongs_to_many :states
 
+    scope :by_id, -> (id) {where('id = ?', id)}
+    
     scope :by_com_name, -> (name, type = "loose") { 
         if type == "strict"
             where('com_name = ?', name)

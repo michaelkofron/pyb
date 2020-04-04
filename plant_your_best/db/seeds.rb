@@ -33,12 +33,20 @@ state_array.each do |state|
         scientific_name = json["#{counter}"]["Scientific Name with Author"]
         family_name = json["#{counter}"]["Family"]
 
-        new_plant = Plant.create(com_name: common_name, sci_name: scientific_name, fam_name: family_name)
+        if Plant.find_by(sci_name: scientific_name)
+            plant = Plant.find_by(sci_name: scientific_name)
+            plant.states << new_state
+            new_state.plants << plant
+            puts "New state to existing plant"
+        else
+            new_plant = Plant.create(com_name: common_name, sci_name: scientific_name, fam_name: family_name)
 
-        new_state.plants << new_plant
-        new_plant.states << new_state
+            new_state.plants << new_plant
+            new_plant.states << new_state
 
-        puts counter
+            puts "New plant"
+        end
+
 
         counter += 1
 

@@ -10,6 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_04_01_002028) do
+
+  create_table "plants", force: :cascade do |t|
+    t.string "com_name"
+    t.string "sci_name"
+    t.string "fam_name"
+  end
+
+  create_table "plants_states", id: false, force: :cascade do |t|
+    t.integer "state_id", null: false
+    t.integer "plant_id", null: false
+    t.index ["plant_id", "state_id"], name: "index_plants_states_on_plant_id_and_state_id"
+    t.index ["state_id", "plant_id"], name: "index_plants_states_on_state_id_and_plant_id"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+  end
 
 end
