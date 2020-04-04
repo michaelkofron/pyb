@@ -1,4 +1,4 @@
-#returns object of coords and the state name of input
+#returns object of coords and the state name of inputs
 
 class Geocoder 
 
