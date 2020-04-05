@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_04_174935) do
+ActiveRecord::Schema.define(version: 2020_04_05_192400) do
 
   create_table "plants", force: :cascade do |t|
     t.string "com_name"
     t.string "sci_name"
     t.string "fam_name"
+    t.string "wiki"
   end
 
   create_table "plants_states", id: false, force: :cascade do |t|
