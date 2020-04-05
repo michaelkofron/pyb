@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "/api/plants", to: "plants#info" #change this to /api and only to applicationcontroller
   get "/api/plants/:query(/:searchtype)", to: "plants#all"
   get "/api/states", to: "states#all"
+  get "/api/states/:place/plants(/:query(/:searchtype))", to: "states#state"
+  get "/api/doc", to: "application#doc"
   
   #get "/api/states", to: "states#info"
 

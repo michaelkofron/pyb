@@ -6,7 +6,7 @@ class Geocoder
         @location = parameter
     end
 
-    def get_coords
+    def get_info
         geocode_link = "https://maps.googleapis.com/maps/api/geocode/json?address=#{@location}&key=#{Key.key}"
 
         current_page = Nokogiri::HTML(open(geocode_link))
@@ -32,7 +32,7 @@ class Geocoder
             end
         end
 
-        object = {current_coords: json["results"][0]["geometry"]["location"], state_name: @variable}
+        object = [json["results"][0]["geometry"]["location"], @variable]
     end
 
     

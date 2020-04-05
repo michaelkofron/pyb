@@ -66,7 +66,7 @@ div#buttons {
     padding-top: 20px; 
     display: flex;
     width: 600px;
-    height: 100px;
+    height: 70px;
     background-color: none;
 }
 
@@ -94,6 +94,17 @@ div#searchbutton{
 }
 
 div#searchbutton:hover {
+    cursor: pointer;
+}
+
+div#searchbuttonstate{
+    display: flex;
+    width:30px;
+    height:30px;
+    background-color: none;
+}
+
+div#searchbuttonstate:hover {
     cursor: pointer;
 }
 
@@ -173,4 +184,9 @@ div#buttons > div > p {
     color: rgb(65, 65, 65);
     font-weight: 300;
     font-size: 30px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
