@@ -1,10 +1,17 @@
 module ApplicationHelper
     def plant_query(plant_start)
+        values = ["com_name", "id", "sci_name", "fam_name", "amount"]
         plants = plant_start
         query = params[:query]
         raw_query_array = query.split("&")
         to_be_flattened_query_array = raw_query_array.map{|x| x.split("=")}
         flattened_query_array = to_be_flattened_query_array.flatten
+
+        if !flattened_query_array.to_set.intersect?(values.to_set)
+            puts "ASDASDLKASKJLDJLKASJKDLLJASDJLKKJLAS"
+            plants = []
+            return {results: 0, search_type: "bad-search", plants: []}
+        end
 
         type = params[:searchtype] == "strict" ? "strict" : "loose"
 

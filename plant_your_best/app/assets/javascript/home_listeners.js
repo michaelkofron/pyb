@@ -60,9 +60,9 @@ function searchButtonClick(){
         searchButton.addEventListener("click", function(){
             if (input.value != "") {
                 if (input.value.includes(" ")){
-                    window.location.href = `http://localhost:3000/api/plants/com_name=${input.value.replace(/\s/g, "+")}`
+                    window.location.href = `${window.location.href}api/plants/com_name=${input.value.replace(/\s/g, "+")}`
                 } else {
-                    window.location.href = `http://localhost:3000/api/plants/com_name=${input.value}`
+                    window.location.href = `${window.location.href}api/plants/com_name=${input.value}`
                 }
                 input.value = ""
                 console.log("click")
@@ -74,9 +74,9 @@ function searchButtonClick(){
         searchButtonState.addEventListener("click", function(){
             if (input.value != "") {
                 if (input.value.includes(" ")){
-                    window.location.href = `http://localhost:3000/api/states/${input.value.replace(/\s/g, "+")}/plants/`
+                    window.location.href = `${window.location.href}api/states/${input.value.replace(/\s/g, "+")}/plants/`
                 } else {
-                    window.location.href = `http://localhost:3000/api/states/${input.value}/plants/`
+                    window.location.href = `${window.location.href}api/states/${input.value}/plants/`
                 }
                 input.value = ""
                 console.log("click")
