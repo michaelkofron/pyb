@@ -44,7 +44,7 @@ state_array.each do |state|
             new_plant.states << new_state
         end
 
-        puts counter + "#{state_name}"
+        puts "#{counter} #{state_name}"
 
         counter += 1
 
