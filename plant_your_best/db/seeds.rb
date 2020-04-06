@@ -22,7 +22,9 @@ state_array.each do |state|
         no_space_name = state
     end
 
-    document = Nokogiri::HTML(open("http://localhost:8080/#{no_space_name}/#{no_space_name}.json"))
+    #document = Nokogiri::HTML(open("http://localhost:8080/#{no_space_name}/#{no_space_name}.json"))
+
+    document= Nokogiri::HTML(open("https://raw.githubusercontent.com/michaelkofron/pyb/master/native%20plants/#{no_space_name}/#{no_space_name}.json"))
 
     json = JSON.parse(document)
 
@@ -44,7 +46,7 @@ state_array.each do |state|
             new_plant.states << new_state
         end
 
-        puts counter
+        puts counter + "#{state_name}"
 
         counter += 1
 
