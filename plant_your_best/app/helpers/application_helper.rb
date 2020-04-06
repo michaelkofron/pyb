@@ -28,9 +28,9 @@ module ApplicationHelper
         end
         #array = []
 
-        results = plants.select("max(id) as id", "com_name", "sci_name", "fam_name").group(:sci_name)
+        results = plants.select("max(id) as id", "com_name", "sci_name", "fam_name", "wiki").group(:sci_name)
 
-        results_array = results.map{|plant| {id: plant.id, com_name: plant.com_name, sci_name: plant.sci_name, fam_name: plant.fam_name, prevalence: (plant.states.map{|x| x.name}).uniq}}
+        results_array = results.map{|plant| {id: plant.id, com_name: plant.com_name, sci_name: plant.sci_name, fam_name: plant.fam_name, wikipedia: plant.wiki, prevalence: (plant.states.map{|x| x.name}).uniq}}
     
         #renders only plants that have a unique 
         return {results: results.length, search_type: type, plants: results_array}

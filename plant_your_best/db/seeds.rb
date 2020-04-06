@@ -37,16 +37,14 @@ state_array.each do |state|
             plant = Plant.find_by(sci_name: scientific_name)
             plant.states << new_state
             new_state.plants << plant
-            puts "New state to existing plant"
         else
             new_plant = Plant.create(com_name: common_name, sci_name: scientific_name, fam_name: family_name)
 
             new_state.plants << new_plant
             new_plant.states << new_state
-
-            puts "New plant"
         end
 
+        puts counter
 
         counter += 1
 
