@@ -33,9 +33,8 @@ module ApplicationHelper
         if !flattened_query_array.include?("amount")
             plants = plants.limit(100)
         end
-        #array = []
-
-        results = plants.select("max(id) as id", "com_name", "sci_name", "fam_name", "wiki").distinct(:sci_name)
+       
+        results = plants.select('distinct on (sci_name) *')
 
         results_array = results.map{|plant| {id: plant.id, com_name: plant.com_name, sci_name: plant.sci_name, fam_name: plant.fam_name, wikipedia: plant.wiki, prevalence: (plant.states.map{|x| x.name}).uniq}}
     
