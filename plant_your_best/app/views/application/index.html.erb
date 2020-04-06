@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <%= stylesheet_link_tag 'home_style.css', media: 'print, screen' %>
         <%= stylesheet_link_tag 'search_animation.css', media: 'print, screen' %>
         <%= javascript_include_tag 'click_script' %>
@@ -28,7 +29,7 @@
                 </div>
             </div>
             <div id="help">
-                <p>need more parameters? <a href="<%= request.base_url %>/api/doc">read the documentation.</a></p>
+                <p>need more parameters? <a href="https://github.com/michaelkofron/pyb/blob/master/README.md" target="_blank">read the documentation.</a></p>
             </div>
         </div>
 
@@ -45,8 +46,8 @@
         <script>
         VANTA.TRUNK({
         el: "#top",
-        mouseControls: true,
-        touchControls: true,
+        mouseControls: false,
+        touchControls: false,
         minHeight: 200.00,
         minWidth: 200.00,
         scale: 1.00,
