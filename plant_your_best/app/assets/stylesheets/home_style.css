@@ -63,6 +63,8 @@ h1#search-text-inner{
 
 div#buttons {
     display: flex;
+    position: relative;
+    z-index: 2;
     padding-top: 20px; 
     display: flex;
     width: 600px;

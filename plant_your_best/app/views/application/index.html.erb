@@ -2,8 +2,8 @@
     <head>
         <title>PYB</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <%= stylesheet_link_tag 'home_style.css', media: 'print, screen' %>
         <%= stylesheet_link_tag 'search_animation.css', media: 'print, screen' %>
+        <%= stylesheet_link_tag 'home_style.css', media: 'print, screen' %>
         <%= javascript_include_tag 'click_script' %>
     </head>
     <body>
@@ -41,6 +41,7 @@
 
     </body>
     <footer>
+        <%= javascript_include_tag 'home_listeners' %>
         <%= javascript_include_tag 'p5.min' %>
 
         <%= javascript_include_tag 'vanta.trunk.min' %>
@@ -59,6 +60,5 @@
         chaos: 2.50
         })
         </script>
-        <%= javascript_include_tag 'home_listeners' %>
     </footer>
 </html>
