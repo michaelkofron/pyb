@@ -2,7 +2,7 @@ class StatesController < ApplicationController
     def all
         states = State.all
 
-        array = states.map{|state| {id: state.id, name: state.name, number_of_plants: state.plant_number, link: "plantyour.best/api/states/#{state.name.gsub(" ", "+")}"}}
+        array = states.map{|state| {id: state.id, name: state.name, number_of_plants: state.plant_number, link: "https://www.plantyour.best/api/states/#{state.name.gsub(" ", "+")}/plants"}}
 
         render json: {states: array}
 
@@ -23,8 +23,8 @@ class StatesController < ApplicationController
 
         if params[:query] == nil
             plants = plants.limit(100)
-            results = plants.select("max(id) as id", "com_name", "sci_name", "fam_name").group(:sci_name)
-            results_array = results.map{|plant| {id: plant.id, com_name: plant.com_name, sci_name: plant.sci_name, fam_name: plant.fam_name, prevalence: (plant.states.map{|x| x.name}).uniq}}
+            results = plants.select("max(id) as id", "com_name", "sci_name", "fam_name", "wiki").group(:sci_name)
+            results_array = results.map{|plant| {id: plant.id, com_name: plant.com_name, sci_name: plant.sci_name, fam_name: plant.fam_name, wikipedia: plant.wiki, prevalence: (plant.states.map{|x| x.name}).uniq}}
             render json: {results: results.length, plants: results_array}
         else
             render json: helpers.plant_query(plants)
