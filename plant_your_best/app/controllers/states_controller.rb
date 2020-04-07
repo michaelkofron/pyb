@@ -23,7 +23,7 @@ class StatesController < ApplicationController
 
         if params[:query] == nil
             plants = plants.limit(100)
-            results = plants.select("max(id) as id", "com_name", "sci_name", "fam_name", "wiki").group(:sci_name)
+            results = plants.select('distinct on (sci_name) *')
             results_array = results.map{|plant| {id: plant.id, com_name: plant.com_name, sci_name: plant.sci_name, fam_name: plant.fam_name, wikipedia: plant.wiki, prevalence: (plant.states.map{|x| x.name}).uniq}}
             render json: {results: results.length, plants: results_array}
         else
