@@ -13,7 +13,7 @@ function searchPlantListener(){
         input.setAttribute("id", "plant-searchbar")
         input.setAttribute("placeholder", "#common-name loose search")
         input.focus()
-        searchButtonClick()
+        searchClick()
     })
 
     state.addEventListener("click", function(){
@@ -25,7 +25,7 @@ function searchPlantListener(){
         input.setAttribute("id", "state-searchbar")
         input.setAttribute("placeholder", "#state name, zip code, address")
         input.focus()
-        searchButtonClick()
+        searchClick()
     })
 }
 
@@ -34,8 +34,6 @@ function exitSearchBar(){
     let plant = document.getElementById("search-plant")
     let state = document.getElementById("search-state")
     let search = document.getElementById("searchbar")
-    let plantSearch = document.getElementById("plant-searchbar")
-    let stateSearch = document.getElementById("state-searchbar")
     let input = search.children[1]
 
     exitButton.addEventListener("click", function(){
@@ -48,43 +46,28 @@ function exitSearchBar(){
     })
 }
 
-function searchButtonClick(){
-    let searchButton = document.getElementById("searchbutton")
-    let searchButtonState = document.getElementById("searchbuttonstate")
+function searchClick(){
+    let searchIcon = document.getElementById("searchicon")
     let plantSearch = document.getElementById("plant-searchbar")
     let stateSearch = document.getElementById("state-searchbar")
-    let search = document.getElementById("searchbar")
-    let input = search.children[1]
 
-    if (searchButton){
-        searchButton.addEventListener("click", function(){
-            if (input.value != "") {
-                if (input.value.includes(" ")){
-                    window.location.href = `${window.location.href}api/plants/com_name=${input.value.replace(/\s/g, "+")}`
-                } else {
-                    window.location.href = `${window.location.href}api/plants/com_name=${input.value}`
-                }
-                input.value = ""
-                console.log("click")
+    searchIcon.addEventListener("click", function(){
+        if (searchIcon.parentElement.id == "searchbutton" && plantSearch.value != ""){
+            if (plantSearch.value.includes(" ")){
+                window.location.href = `${window.location.href}api/plants/com_name=${plantSearch.value.replace(/\s/g, "+")}`
             } else {
-                console.log("blank input")
+                window.location.href = `${window.location.href}api/plants/com_name=${plantSearch.value}`
             }
-        })
-    } else {
-        searchButtonState.addEventListener("click", function(){
-            if (input.value != "") {
-                if (input.value.includes(" ")){
-                    window.location.href = `${window.location.href}api/states/${input.value.replace(/\s/g, "+")}/plants/`
-                } else {
-                    window.location.href = `${window.location.href}api/states/${input.value}/plants/`
-                }
-                input.value = ""
-                console.log("click")
+            plantSearch.value = ""
+        } else if (searchIcon.parentElement.id == "searchbuttonstate") {
+            if (stateSearch.value.includes(" ")){
+                window.location.href = `${window.location.href}api/states/${stateSearch.value.replace(/\s/g, "+")}/plants/`
             } else {
-                console.log("blank input")
+                window.location.href = `${window.location.href}api/states/${stateSearch.value}/plants/`
             }
-        })
-    }
+            stateSearch.value = ""
+        }
+    })
 }
 
 searchPlantListener()
