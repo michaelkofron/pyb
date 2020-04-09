@@ -8,7 +8,7 @@ function searchPlantListener(){
         plant.style.display = "none"
         state.style.display = "none"
         search.style.display = "flex"
-        input.setAttribute("onkeypress", "return keyPress(event, 'searchbutton')")
+        input.setAttribute("onkeypress", "return keyPress(event, 'searchicon')")
         searchButton.setAttribute("id", "searchbutton")
         input.setAttribute("id", "plant-searchbar")
         input.setAttribute("placeholder", "#common-name loose search")
@@ -20,7 +20,7 @@ function searchPlantListener(){
         plant.style.display = "none"
         state.style.display = "none"
         search.style.display = "flex"
-        input.setAttribute("onkeypress", "return keyPress(event, 'searchbuttonstate')")
+        input.setAttribute("onkeypress", "return keyPress(event, 'searchicon')")
         searchButton.setAttribute("id", "searchbuttonstate")
         input.setAttribute("id", "state-searchbar")
         input.setAttribute("placeholder", "#state name, zip code, address")
