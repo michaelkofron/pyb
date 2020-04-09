@@ -12,6 +12,8 @@ Because all plants are related to the states that they are present in, users can
 
 `https://www.plantyour.best/api/states/{STATE_NAME, ZIP_CODE, or ADDRESS}/plants/{PARAMETERS}`
 
+NOTICE: querying by state name is a more direct application of the API, and is overall less error-prone than searching by zip code or address.
+
 **Plants can be found like this:**
 
 `https://www.plantyour.best/api/plants/{PARAMETERS}`
