@@ -10,25 +10,25 @@ Because all plants are related to the states that they are present in, users can
 
 **A state's plants can be found like this:**
 
-`https://www.plantyour.best/api/states/{STATE_NAME, ZIP_CODE, or ADDRESS}/plants/{PARAMETERS}`
+`http://www.plantyour.best/api/states/{STATE_NAME, ZIP_CODE, or ADDRESS}/plants/{PARAMETERS}`
 
 NOTICE: querying by state name is a more direct application of the API, and is overall less error-prone than searching by zip code or address.
 
 **Plants can be found like this:**
 
-`https://www.plantyour.best/api/plants/{PARAMETERS}`
+`http://www.plantyour.best/api/plants/{PARAMETERS}`
 
 **All plants have a common name, scientific name, family name, wikipedia link, and prevalance (names of states where the plant can be found)**
 
 **All queries default to "loose-search" meaning the API will return as many results as possible within the specified parameters. Search type can be changed to "strict-search" by adding `/strict` to the end of any query:**
 
-`https://www.plantyour.best/api/plants/com_name=peach` will return plants such as "peachleaf bellflower"
+`http://www.plantyour.best/api/plants/com_name=peach` will return plants such as "peachleaf bellflower"
 
-`https://www.plantyour.best/api/plants/com_name=peach/strict` will return plants named "peach"
+`http://www.plantyour.best/api/plants/com_name=peach/strict` will return plants named "peach"
 
 **To query plants with spaces in their names, or states with spaces in their names, use "+" to replace the spaces:**
 
-`https://www.plantyour.best/api/plants/com_name="sweet+orange"`
+`http://www.plantyour.best/api/plants/com_name="sweet+orange"`
 
 - **All Parameters**
    * **id** = integer, plant id
@@ -39,7 +39,7 @@ NOTICE: querying by state name is a more direct application of the API, and is o
 
 **Parameters can be stacked using "&"**
 
-`https://www.plantyour.best/api/states/California/plants/com_name=orange&amount=15`
+`http://www.plantyour.best/api/states/California/plants/com_name=orange&amount=15`
 
 # Built Using
 
