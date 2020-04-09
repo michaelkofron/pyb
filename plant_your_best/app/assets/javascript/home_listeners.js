@@ -55,17 +55,19 @@ function searchClick(){
         if (searchIcon.parentElement.id == "searchbutton" && plantSearch.value != ""){
             if (plantSearch.value.includes(" ")){
                 window.location.href = `${window.location.href}api/plants/com_name=${plantSearch.value.replace(/\s/g, "+")}`
+                plantSearch.value = ""
             } else {
                 window.location.href = `${window.location.href}api/plants/com_name=${plantSearch.value}`
+                plantSearch.value = ""
             }
-            plantSearch.value = ""
         } else if (searchIcon.parentElement.id == "searchbuttonstate") {
             if (stateSearch.value.includes(" ")){
                 window.location.href = `${window.location.href}api/states/${stateSearch.value.replace(/\s/g, "+")}/plants/`
+                stateSearch.value = ""
             } else {
                 window.location.href = `${window.location.href}api/states/${stateSearch.value}/plants/`
+                stateSearch.value = ""
             }
-            stateSearch.value = ""
         }
     })
 }
