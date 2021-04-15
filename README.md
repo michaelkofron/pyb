@@ -1,6 +1,6 @@
 # Plant Your Best - A Common-name Plants API
 
-https://plantyourbest.herokuapp.com/
+https://plantyourbest.herokuapp.com/   *TAKES A SECOND TO LOAD, HEROKU HOBBY APP
 
 PY.B API features a simple front-end that provides a quick way to interact with the database. From the homepage users can query plants by common-name or query states by state name, zip code, and address. Further parameters and filters can be applied in the traditional way ([see: Documentation](#Documentation)). All results are returned as JSON. Plant information was seeded into the database from the USDA's "State PLANTS Checklist"
 
