@@ -1,5 +1,7 @@
 # Plant Your Best - A Common-name Plants API
 
+https://plantyourbest.herokuapp.com/
+
 PY.B API features a simple front-end that provides a quick way to interact with the database. From the homepage users can query plants by common-name or query states by state name, zip code, and address. Further parameters and filters can be applied in the traditional way ([see: Documentation](#Documentation)). All results are returned as JSON. Plant information was seeded into the database from the USDA's "State PLANTS Checklist"
 
 ![](images/pybfinal.gif)
@@ -22,13 +24,13 @@ NOTICE: querying by state name is a more direct application of the API, and is o
 
 **All queries default to "loose-search" meaning the API will return as many results as possible within the specified parameters. Search type can be changed to "strict-search" by adding `/strict` to the end of any query:**
 
-`http://www.plantyour.best/api/plants/com_name=peach` will return plants such as "peachleaf bellflower"
+`https://plantyourbest.herokuapp.com/api/plants/com_name=peach` will return plants such as "peachleaf bellflower"
 
-`http://www.plantyour.best/api/plants/com_name=peach/strict` will return plants named "peach"
+`https://plantyourbest.herokuapp.com/api/plants/com_name=peach/strict` will return plants named "peach"
 
 **To query plants with spaces in their names, or states with spaces in their names, use "+" to replace the spaces:**
 
-`http://www.plantyour.best/api/plants/com_name="sweet+orange"`
+`https://plantyourbest.herokuapp.com/api/plants/com_name="sweet+orange"`
 
 - **All Parameters**
    * **id** = integer, plant id
@@ -39,7 +41,7 @@ NOTICE: querying by state name is a more direct application of the API, and is o
 
 **Parameters can be stacked using "&"**
 
-`http://www.plantyour.best/api/states/California/plants/com_name=orange&amount=15`
+`https://plantyourbest.herokuapp.com/api/states/California/plants/com_name=orange&amount=15`
 
 # Built Using
 
